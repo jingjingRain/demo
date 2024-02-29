@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import '@mantine/core/styles.css';
@@ -64,13 +64,21 @@ const CompA = () => {
   );
 };
 
-function CompB(props: any) {
-  return <div>
-    <h2>CompB</h2>
-    <p>Count from CompA: {props.count}</p>
-  </div>
-}
+// function CompB(props: any) {
+//   return <div>
+//     <h2>CompB</h2>
+//     <p>Count from CompA: {props.count}</p>
+//   </div>
+// }
 // 类组件 CompB 
+interface IProps {
+  count: number
+}
+class CompB extends Component<IProps, any> {
+  render() {
+    return <h1>hello world{this.props.count}</h1>
+  }
+}
 // class CompB extends React.Component {
 //   render() {
 //     return (
